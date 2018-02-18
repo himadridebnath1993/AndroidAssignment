@@ -3,12 +3,9 @@ package com.androidassignment.service
 
 import android.annotation.SuppressLint
 import android.content.Context
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import android.net.ConnectivityManager
-
-
-
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 
 /**
@@ -28,7 +25,7 @@ class mWebService {
         println("**************** GET URL *****************\n" + request)
 
         val response = client.newCall(request).execute()
-        val r = response.body().string()
+        val r = response.body()!!.string()
         println("**************** GET RESPONSE *****************\n" + r)
 
         return r
